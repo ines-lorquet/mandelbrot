@@ -1,22 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# appele les différentes classes.
 from fractales import BurningShip, Sierpinski, Mandelbrot, Julia, Koch
 
-
 def main():
-    # Afficher les options pour l'utilisateur
+    # display the fractale figures available
     print("1. Sierpinski")
     print("2. Mandelbrot")
     print("3. Julia")
     print("4. Koch")
     print("5. BurningShip")
 
-    # AJOUTER UN PROMPT QUI DEMANDE A L'UTILISATEUR DE CHOISIR UNE FIGURE FRACTALE
+    # Ask the user to choose a fractal
     figure = int(input("\nChoose the number corresponding to the desired fractal figure : "))
 
-    # Mapping the fractal figure and their corresponding classes
+    # Mapping of the fractal figures and their corresponding classes
     fractal_figures = {
         1: (Sierpinski, "Sierpinski"),
         2: (Mandelbrot, "Mandelbrot"),
@@ -26,7 +24,7 @@ def main():
     }
 
 
-    # Créer et afficher la figure fractale en fonction du choix de l'utilisateur
+    # Instanciate the chosen fractal figure
     if figure == 1:
         # Sierpinski
         points = np.array([[0, 0], [1, 0], [0.5, np.sqrt(3)/2]])

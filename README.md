@@ -16,5 +16,5 @@ Le triangle de Sierpinski est un exemple de fractale qui repose sur la forme aut
 ![3 triangles issus du premier](img/divided_triangle.png)
 3. Positionne T1 , T2 et T3 de sorte que deux coins de chaque triangle touchent les deux autres triangles.
 ![triangle de Sierpinski](img/T1,T2,T3.png)
-4. Répète les étapes 2 et 3 avec chacun des petits triangles ad libidum.
+4. Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
