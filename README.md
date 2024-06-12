@@ -10,8 +10,7 @@
   - [Sokoban](#sokoban)
   - [Contexte](#contexte)
   - [Automatisation](#automatisation)
-
-## L'équipe
+## <span style="color:blue"> L'équipe</span>
 3 étudiants en 1ère année de Bachelor IT spécialité Intelligence Artificielle à [La Plateforme_](https://laplateforme.io/) à Marseille
 
 - Said Kheloufi
