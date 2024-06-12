@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # appele les différentes classes.
-from fractal import BurningShip, Sierpinski, Mandelbrot, Julia, Koch
+from fractales import BurningShip, Sierpinski, Mandelbrot, Julia, Koch
 
 
 def main():
