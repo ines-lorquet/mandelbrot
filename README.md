@@ -48,7 +48,7 @@
 
 ### Triangle de Sierpiński
 
-Le triangle de Sierpiński est un motif fractal formé en répétant ce processus :
+Le **triangle de Sierpiński** est un motif fractal formé en répétant ce processus :
 
 - Commencez avec un grand triangle.
 - Divisez-le en quatre petits triangles en reliant les milieux des côtés.
@@ -59,7 +59,7 @@ Le motif obtenu est un triangle avec une structure qui se répète à l'infini, 
 
 ### Mandelbrot
 
-L'ensemble de Mandelbrot est une forme fractale complexe obtenue par un processus mathématique. Voici une explication simple :
+L'ensemble de **Mandelbrot** est une forme fractale complexe obtenue par un processus mathématique. Voici une explication simple :
 
 - L'ensemble de Mandelbrot est défini par la formule : \[ z_{n+1} = z_n^2 + c \] où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
 
@@ -71,7 +71,7 @@ Le résultat est une forme complexe et belle avec des motifs détaillés qui se 
 
 ### Julia
 
-Les ensembles de Julia sont des formes fractales obtenues par des formules mathématiques. Voici une explication simple :
+Les ensembles de **Julia** sont des formes fractales obtenues par des formules mathématiques. Voici une explication simple :
 
 - Choisissez un point de départ sur le plan complexe.
 - Appliquez une formule mathématique (itération) à ce point.
@@ -82,4 +82,14 @@ Le résultat est un motif complexe et coloré qui se répète à différentes é
 
 ### Flocon de neige de Koch
 
+Le **flocon de neige de Koch** est un motif fractal créé en répétant un processus simple. Voici comment il est formé :
+
+- Commencez avec un triangle équilatéral.
+- Divisez chaque côté en trois segments égaux.
+- Remplacez le segment du milieu par deux segments formant un angle, créant ainsi un petit triangle qui pointe vers l'extérieur.
+- Répétez ces étapes pour chaque côté nouvellement formé.
+
+En répétant ce processus encore et encore, le bord du flocon de neige devient de plus en plus complexe, créant une forme de flocon de neige détaillée et infiniment fine.
+
 ### Burning ship
+
