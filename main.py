@@ -23,12 +23,15 @@ def main():
         5: (BurningShip, "BurningShip")
     }
 
-
     # Instanciate the chosen fractal figure
     if figure == 1:
         # Sierpinski
-        points = np.array([[0, 0], [1, 0], [0.5, np.sqrt(3)/2]])
-        sierpinski_triangle = Sierpinski(order=5, points=points)
+        points = np.array([
+            [0, 0],
+            [1, 0],
+            [0.5, np.sqrt(3)/2]
+        ])
+        sierpinski_triangle = Sierpinski(order=8, points=points)
         sierpinski_triangle.draw_triangle()
     elif figure == 2:
         # Mandelbrot

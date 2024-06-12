@@ -10,7 +10,7 @@ class Sierpinski:
     def draw_triangle(self):
         self._sierpinski_triangle(self.order, self.points)
         plt.show()
-        # Enregistre la figure sous forme d'image
+        # Enregistre la figure sous forme d'image pour afficher avec le terminal hors IDE
         # plt.savefig('fractal.png')
         # print("Fractal saved as fractal.png")
 
