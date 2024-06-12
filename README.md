@@ -84,25 +84,27 @@ Le résultat est un motif complexe et coloré qui se répète à différentes é
 
 Le **flocon de neige de Koch** est un motif fractal créé en répétant un processus simple. Voici comment il est formé :
 
-- Commencez avec un triangle équilatéral.
-- Divisez chaque côté en trois segments égaux.
-- Remplacez le segment du milieu par deux segments formant un angle, créant ainsi un petit triangle qui pointe vers l'extérieur.
-- Répétez ces étapes pour chaque côté nouvellement formé.
+- Commencez avec un **triangle équilatéral**.
+
+- Divisez chaque côté en trois **segments égaux**.
+
+- **Remplacez le segment** du milieu par deux segments formant un angle, créant ainsi un petit triangle qui pointe vers l'extérieur.
+
+- **Répétez** ces étapes pour chaque côté nouvellement formé.
 
 En répétant ce processus encore et encore, le bord du flocon de neige devient de plus en plus complexe, créant une forme de flocon de neige détaillée et infiniment fine.
 
 ### Burning ship
 
-- Commencez avec le plan complexe : Chaque point sur une grille représente un nombre complexe.
+Le "Burning Ship" est une fractale générée en utilisant une méthode itérative spécifique. Voici les étapes pour générer cette fractale :
+
+- Commencez avec le **plan complexe** : Chaque point sur une grille représente un nombre complexe.
 
 - **Appliquez une formule spécifique** : Pour chaque point \( (x, y) \) sur la grille, utilisez la formule itérative suivante :
+\[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \] où \( z_0 = 0 \) et \( c \) est le point complexe \( (x, y) \). Ici, \( Re(z_n) \) et \( Im(z_n) \) sont les parties réelle et imaginaire de \( z_n \), et \( |\cdot| \) indique la valeur absolue.
 
-\[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]
+- **Répétez l'itération** : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
 
-où \( z_0 = 0 \) et \( c \) est le point complexe \( (x, y) \). Ici, \( Re(z_n) \) et \( Im(z_n) \) sont les parties réelle et imaginaire de \( z_n \), et \( |\cdot| \) indique la valeur absolue.
-
-- Répétez l'itération : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
-
-- Attribuez des couleurs : Les points qui ne s'échappent pas après le nombre maximum d'itérations sont colorés d'une manière spécifique, tandis que ceux qui s'échappent sont colorés différemment.
+- **Attribuez des couleurs** : Les points qui ne s'échappent pas après le nombre maximum d'itérations sont colorés d'une manière spécifique, tandis que ceux qui s'échappent sont colorés différemment.
 
 Le résultat est une image complexe et souvent spectaculaire, qui ressemble à un navire en feu, d'où son nom "Burning Ship" (navire en feu).
