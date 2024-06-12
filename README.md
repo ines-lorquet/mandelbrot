@@ -10,11 +10,10 @@
   - [Sokoban](#sokoban)
   - [Contexte](#contexte)
   - [Automatisation](#automatisation)
-## <span style="color:blue"> L'équipe</span>
-<span style="color:blue"> L'équipe</span>
-`L équipe`
+## L'équipe
 
-3 étudiants en 1ère année de Bachelor IT spécialité Intelligence Artificielle à [La Plateforme_](https://laplateforme.io/) à Marseille
+
+3 étudiants en 1ère année de `Bachelor IT spécialité Intelligence Artificielle` à [La Plateforme_](https://laplateforme.io/) à Marseille
 
 - Said Kheloufi
   <a href="https://www.linkedin.com/in/said-kheloufi/">
@@ -63,7 +62,7 @@ Le motif obtenu est un triangle avec une structure qui se répète à l'infini, 
 
 L'ensemble de **Mandelbrot** est une forme fractale complexe obtenue par un processus mathématique. Voici une explication simple :
 
-- L'ensemble de Mandelbrot est défini par la formule : \[ z_^{n+1} = z_n^2 + c \] $z^{n+1} = z_n^2 + c$ où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
+- L'ensemble de Mandelbrot est défini par la formule : $z^{n+1} = z_n^2 + c$ où $z$ et $c$ sont des nombres complexes. Cette formule est répétée pour déterminer si le point $c$ appartient à l'ensemble de Mandelbrot.
 
 - Répétez l'équation pour voir si la valeur de 𝑧 reste finie ou devient infinie.
 
@@ -103,7 +102,7 @@ Le "Burning Ship" est une fractale générée en utilisant une méthode itérati
 - Commencez avec le **plan complexe** : Chaque point sur une grille représente un nombre complexe.
 
 - **Appliquez une formule spécifique** : Pour chaque point \( (x, y) \) sur la grille, utilisez la formule itérative suivante :
-\[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \] où \( z_0 = 0 \) et \( c \) est le point complexe \( (x, y) \). Ici, \( Re(z_n) \) et \( Im(z_n) \) sont les parties réelle et imaginaire de \( z_n \), et \( |\cdot| \) indique la valeur absolue.
+$[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ où $ z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $, et $ |\cdot| $ indique la valeur absolue.
 
 - **Répétez l'itération** : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
 
