@@ -23,8 +23,6 @@ class Sierpinski:
             self._sierpinski_triangle(order-1, np.array([points[2], mid2, mid3]))
 
 
-
-
 class Mandelbrot:
 
     def __init__(self, xmin, xmax, ymin, ymax, width, height, max_iter):
@@ -57,9 +55,6 @@ class Mandelbrot:
         plt.show()
 
 
-
-
-
 class Julia:
     def __init__(self, c, max_iter):
         self.c = c
@@ -88,11 +83,32 @@ class Julia:
         plt.show()
 
 
-
-
-
 class Koch:
-    pass
+    def __init__(self, order, scale=10):
+        self.order = order
+        self.scale = scale
+        self.x, self.y = self._generate_snowflake()
+
+    def _koch_snowflake_complex(self, order):
+        if order == 0:
+            return np.array([0.0 + 0.0j, 1.0 + 0.0j, 0.5 + np.sqrt(3)/2*1j, 0.0 + 0.0j])
+        else:
+            z = self._koch_snowflake_complex(order - 1)
+            z1 = np.roll(z, shift=-1)
+            dz = z1 - z
+            new_points = np.vstack([z, z + dz/3, z + dz/3 + dz/3*np.exp(np.pi*1j/3), z + 2*dz/3]).T
+            return new_points.flatten()
+
+    def _generate_snowflake(self):
+        points = self._koch_snowflake_complex(self.order) * self.scale
+        return points.real, points.imag
+
+    def plot(self):
+        plt.plot(self.x, self.y)
+        plt.axis('equal')
+        plt.show()
+
+
 
 class BurningShip:
     def __init__(self, xmin, xmax, ymin, ymax, width, height, max_iter):
