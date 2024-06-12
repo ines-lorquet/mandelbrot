@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Prend les fichiers burning ship, julia, mandelbrot, Sierpinsky et Koch pour en faire des classes.
+
 class Sierpinski:
     def __init__(self, order, points):
         self.order = order
@@ -10,6 +10,9 @@ class Sierpinski:
     def draw_triangle(self):
         self._sierpinski_triangle(self.order, self.points)
         plt.show()
+        # Enregistre la figure sous forme d'image
+        # plt.savefig('fractal.png')
+        # print("Fractal saved as fractal.png")
 
     def _sierpinski_triangle(self, order, points):
         if order == 0:
