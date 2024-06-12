@@ -61,7 +61,7 @@ Le motif obtenu est un triangle avec une structure qui se répète à l'infini, 
 
 L'ensemble de **Mandelbrot** est une forme fractale complexe obtenue par un processus mathématique. Voici une explication simple :
 
-- L'ensemble de Mandelbrot est défini par la formule : \[ z_{n+1} = z_n^2 + c \] où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
+- L'ensemble de Mandelbrot est défini par la formule : \[ z_^{n+1} = z_n^2 + c \] où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
 
 - Répétez l'équation pour voir si la valeur de 𝑧 reste finie ou devient infinie.
 
