@@ -61,28 +61,24 @@ Le motif obtenu est un triangle avec une structure qui se répète à l'infini, 
 
 L'ensemble de Mandelbrot est une forme fractale complexe obtenue par un processus mathématique. Voici une explication simple :
 
-- L'ensemble de Mandelbrot est défini par la formule :
+- L'ensemble de Mandelbrot est défini par la formule : \[ z_{n+1} = z_n^2 + c \] où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
 
-\[ z_{n+1} = z_n^2 + c \]
+- Répétez l'équation pour voir si la valeur de 𝑧 reste finie ou devient infinie.
 
-où \( z \) et \( c \) sont des nombres complexes. Cette formule est répétée pour déterminer si le point \( c \) appartient à l'ensemble de Mandelbrot.
-
-- Répétez l'équation pour voir si la valeur de 
-𝑧
-z reste finie ou devient infinie.
-- Coloriez le point 
-𝑐
-c : Si 
-𝑧
-z reste finie, le point appartient à l'ensemble de Mandelbrot et est colorié en noir. Si 
-𝑧
-z devient infinie, le point est colorié en fonction de la vitesse à laquelle 
-𝑧
-z diverge.
+- Coloriez le point 𝑐 : Si 𝑧 reste finie, le point appartient à l'ensemble de Mandelbrot et est colorié en noir. Si 𝑧 devient infinie, le point est colorié en fonction de la vitesse à laquelle 𝑧 diverge.
 
 Le résultat est une forme complexe et belle avec des motifs détaillés qui se répètent à l'infini lorsqu'on zoome.
 
 ### Julia
+
+Les ensembles de Julia sont des formes fractales obtenues par des formules mathématiques. Voici une explication simple :
+
+- Choisissez un point de départ sur le plan complexe.
+- Appliquez une formule mathématique (itération) à ce point.
+- Répétez la formule plusieurs fois.
+- Coloriez le point selon la rapidité avec laquelle il s'éloigne.
+
+Le résultat est un motif complexe et coloré qui se répète à différentes échelles, créant une structure fractale
 
 ### Flocon de neige de Koch
 
