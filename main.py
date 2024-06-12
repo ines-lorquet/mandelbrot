@@ -2,63 +2,81 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # appele les différentes classes.
-from fractal import BurningShip
-from fractal import Sierpinski
-from fractal import Mandelbrot
-from fractal import Julia
-from fractal import Koch
+from fractal import BurningShip, Sierpinski, Mandelbrot, Julia, Koch
 
 
-# AJOUTER UN PROMPT QUI DEMANDE A L'UTILISATEUR DE CHOISIR UNE FIGURE FRACTALE
+def main():
+    # Afficher les options pour l'utilisateur
+    print("1. Sierpinski")
+    print("2. Mandelbrot")
+    print("3. Julia")
+    print("4. Koch")
+    print("5. BurningShip")
 
-# # Sierpinski
-# points = np.array([[0, 0], [1, 0], [0.5, np.sqrt(3)/2]])
-# triangle = Sierpinski(5, points)
-# triangle.draw_triangle()
+    # AJOUTER UN PROMPT QUI DEMANDE A L'UTILISATEUR DE CHOISIR UNE FIGURE FRACTALE
+    figure = int(input("\nChoose the number corresponding to the desired fractal figure : "))
 
-# # Mandelbrot
-# xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
-# width, height, max_iter = 1000, 1000, 256
-# mandelbrot_set = Mandelbrot(xmin, xmax, ymin, ymax, width, height, max_iter)
-# mandelbrot_set.plot()
-
-# # Julia
-# xmin, xmax, ymin, ymax = -1.5, 1.5, -1.5, 1.5
-# width, height, max_iter = 1000, 1000, 256
-# c = complex(-0.7, 0.27015)
-# julia_set = Julia(c, max_iter)
-# julia_set.plot(xmin, xmax, ymin, ymax, width, height)
-
-
-# # Koch
-# koch_snowflake = Koch(order=4)
-# koch_snowflake.plot()
-
-# BurningShip
-xmin, xmax, ymin, ymax = -2.0, 1.0, -2.0, 1.0
-width, height, max_iter = 1000, 1000, 256
-
-burning_ship = BurningShip(xmin, xmax, ymin, ymax, width, height, max_iter)
-
-X, Y, Z = burning_ship.X, burning_ship.Y, burning_ship.Z
+    # Mapping the fractal figure and their corresponding classes
+    fractal_figures = {
+        1: (Sierpinski, "Sierpinski"),
+        2: (Mandelbrot, "Mandelbrot"),
+        3: (Julia, "Julia"),
+        4: (Koch, "Koch"),
+        5: (BurningShip, "BurningShip")
+    }
 
 
+    # Créer et afficher la figure fractale en fonction du choix de l'utilisateur
+    if figure == 1:
+        # Sierpinski
+        points = np.array([[0, 0], [1, 0], [0.5, np.sqrt(3)/2]])
+        sierpinski_triangle = Sierpinski(order=5, points=points)
+        sierpinski_triangle.draw_triangle()
+    elif figure == 2:
+        # Mandelbrot
+        xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
+        width, height, max_iter = 1000, 1000, 256
+        mandelbrot_set = Mandelbrot(xmin, xmax, ymin, ymax, width, height, max_iter)
+        mandelbrot_set.plot()
+    elif figure == 3:
+        # Julia
+        xmin, xmax, ymin, ymax = -1.5, 1.5, -1.5, 1.5
+        width, height, max_iter = 1000, 1000, 256
+        c = complex(-0.7, 0.27015)
+        julia_set = Julia(c, max_iter)
+        julia_set.plot(xmin, xmax, ymin, ymax, width, height)
+    elif figure == 4:
+        # Koch
+        koch_snowflake = Koch(order=4)
+        koch_snowflake.plot()
+    elif figure == 5:
+        # BurningShip
+        xmin, xmax, ymin, ymax = -2.0, 1.0, -2.0, 1.0
+        width, height, max_iter = 1000, 1000, 256
+        burning_ship = BurningShip(xmin, xmax, ymin, ymax, width, height, max_iter)
+        burning_ship.plot()
+    else:
+        print("Choix invalide. Veuillez entrer un numéro entre 1 et 5.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+# # # BurningShip
+# # xmin, xmax, ymin, ymax = -2.0, 1.0, -2.0, 1.0
+# # width, height, max_iter = 1000, 1000, 256
+
+# # burning_ship = BurningShip(xmin, xmax, ymin, ymax, width, height, max_iter)
+
+# # X, Y, Z = burning_ship.X, burning_ship.Y, burning_ship.Z
 
 
 
 
 
 
-# #  Crée des visualisation
-# sort = int(input("\nChoose the number corresponding to the desired fractal : "))
 
-# # Mapping the sort methods and their corresponding classes
-# sorting_methods = {
-#     1: (Sierpinski, "Sierpinski"),
-#     2: (Mandelbrot, "Mandelbrot"),
-#     3: (Insertion, "insertion sort"),
-#     4: (Fusion, "merge sort"),
-#     5: (Quick, "quick sort"),
-#     6: (Heap, "heap sort"),
-#     7: (BurningShip, "BurningShip")
-# }
+
