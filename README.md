@@ -17,26 +17,26 @@
 
 - Said Kheloufi
   <a href="https://www.linkedin.com/in/said-kheloufi/">
-    <img src="images/linkedin.png" width=25>
+    <img src="img/linkedin.png" width=25>
   </a>
   <a href="https://github.com/said-kheloufi">
-    <img src="images/github.png" width=25>
+    <img src="img/github.png" width=25>
   </a>
 
 - Ines Lorquet
   <a href="https://www.linkedin.com/in/ines-lorquet-35b90128b/">
-    <img src="images/linkedin.png" width=25>
+    <img src="img/linkedin.png" width=25>
   </a>
   <a href="https://github.com/ines-lorquet">
-    <img src="images/github.png" width=25>
+    <img src="img/github.png" width=25>
   </a>
 
 - Bruno Coulet
   <a href="https://www.linkedin.com/in/bruno-coulet-35b90128b/">
-    <img src="images/linkedin.png" width=25>
+    <img src="img/linkedin.png" width=25>
   </a>
   <a href="https://github.com/bruno-coulet">
-    <img src="images/github.png" width=25>
+    <img src="img/github.png" width=25>
   </a>
 
 ## Fractales
@@ -101,11 +101,11 @@ Le "Burning Ship" est une fractale générée en utilisant une méthode itérati
 
 - Commencez avec le **plan complexe** : Chaque point sur une grille représente un nombre complexe.
 
-- **Appliquez une formule spécifique** : Pour chaque point \( (x, y) \) sur la grille, utilisez la formule itérative suivante :
-$[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ où $ z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $, et $ |\cdot| $ indique la valeur absolue.
+- **Appliquez une formule spécifique** : Pour chaque point $ (x, y) $ sur la grille, utilisez la formule itérative suivante :
+$[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ où $z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $ et $\cdot $ indique la valeur absolue.
 
 - **Répétez l'itération** : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
 
 - **Attribuez des couleurs** : Les points qui ne s'échappent pas après le nombre maximum d'itérations sont colorés d'une manière spécifique, tandis que ceux qui s'échappent sont colorés différemment.
 
-Le résultat est une image complexe et souvent spectaculaire, qui ressemble à un navire en feu, d'où son nom "Burning Ship" (navire en feu).
+Le résultat est une image complexe et souvent spectaculaire, qui ressemble à un navire en feu, d'où son nom **"Burning Ship"** (navire en feu).
