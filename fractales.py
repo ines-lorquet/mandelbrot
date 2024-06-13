@@ -1,153 +1,118 @@
-"""triangle de Sierpiński"""
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider
 
-def midpoint(p1, p2):
-    return (p1 + p2) / 2
+class Fractals:
+    def __init__(self, fractal_type, **kwargs):
+        self.fractal_type = fractal_type
+        self.kwargs = kwargs
 
-def sierpinski_triangle(ax, level, p1, p2, p3):
-    if level == 0:
-        triangle = np.array([p1, p2, p3, p1])
-        ax.plot(triangle[:, 0], triangle[:, 1], 'k-')
-    else:
-        p4 = midpoint(p1, p2)
-        p5 = midpoint(p2, p3)
-        p6 = midpoint(p1, p3)
-        sierpinski_triangle(ax, level - 1, p1, p4, p6)
-        sierpinski_triangle(ax, level - 1, p4, p2, p5)
-        sierpinski_triangle(ax, level - 1, p6, p5, p3)
+    def draw(self):
+        if self.fractal_type == 'sierpinski':
+            self._draw_sierpinski()
+        elif self.fractal_type == 'mandelbrot':
+            self._draw_mandelbrot()
+        elif self.fractal_type == 'julia':
+            self._draw_julia()
+        elif self.fractal_type == 'koch':
+            self._draw_koch()
+        elif self.fractal_type == 'burning_ship':
+            self._draw_burning_ship()
+        else:
+            raise ValueError("Unknown fractal type")
 
-def draw_sierpinski_triangle(level):
-    ax.clear()
-    ax.set_aspect('equal')
-    ax.axis('off')
+    def _draw_sierpinski(self):
+        order = self.kwargs['order']
+        points = self.kwargs['points']
+        self._sierpinski_triangle(order, points)
+        
+    def _sierpinski_triangle(self, order, points):
+        if order == 0:
+            plt.fill(points[:, 0], points[:, 1], 'b')
+        else:
+            mid1 = (points[0] + points[1]) / 2
+            mid2 = (points[1] + points[2]) / 2
+            mid3 = (points[2] + points[0]) / 2
+            self._sierpinski_triangle(order-1, np.array([points[0], mid1, mid3]))
+            self._sierpinski_triangle(order-1, np.array([points[1], mid1, mid2]))
+            self._sierpinski_triangle(order-1, np.array([points[2], mid2, mid3]))
     
-    p1 = np.array([0, 0])
-    p2 = np.array([1, 0])
-    p3 = np.array([0.5, np.sqrt(3)/2])
-    
-    sierpinski_triangle(ax, level, p1, p2, p3)
-    fig.canvas.draw_idle()
+    def _draw_mandelbrot(self):
+        self._mandelbrot_set(self.kwargs)
 
-# Initialisation de la figure et de l'axe
-fig, ax = plt.subplots()
-plt.subplots_adjust(left=0.1, bottom=0.25)
-ax.set_aspect('equal')
-ax.axis('off')
+    def _mandelbrot(self, c, max_iter):
+        z = c
+        for n in range(max_iter):
+            if abs(z) > 2:
+                return n
+            z = z * z + c
+        return max_iter
 
-# Initialisation du triangle de Sierpiński
-initial_level = 4
-draw_sierpinski_triangle(initial_level)
+    def _mandelbrot_set(self, kwargs):
+        xmin, xmax, ymin, ymax = kwargs['xmin'], kwargs['xmax'], kwargs['ymin'], kwargs['ymax']
+        width, height, max_iter = kwargs['width'], kwargs['height'], kwargs['max_iter']
+        r1 = np.linspace(xmin, xmax, width)
+        r2 = np.linspace(ymin, ymax, height)
+        Z = np.array([[self._mandelbrot(complex(r, i), max_iter) for r in r1] for i in r2])
+        plt.imshow(Z, extent=[xmin, xmax, ymin, ymax])
+        plt.colorbar()
 
-# Création du slider pour ajuster le niveau
-ax_slider = plt.axes([0.1, 0.1, 0.8, 0.03], facecolor='lightgoldenrodyellow')
-slider = Slider(ax_slider, 'Niveau', 0, 7, valinit=initial_level, valstep=1)
+    def _draw_julia(self):
+        self._julia_set(self.kwargs)
 
-# Mise à jour du triangle lorsque le slider est modifié
-def update(val):
-    level = slider.val
-    draw_sierpinski_triangle(level)
+    def _julia(self, z, c, max_iter):
+        for n in range(max_iter):
+            if abs(z) > 2:
+                return n
+            z = z * z + c
+        return max_iter
 
-slider.on_changed(update)
+    def _julia_set(self, kwargs):
+        c = kwargs['c']
+        xmin, xmax, ymin, ymax = kwargs['xmin'], kwargs['xmax'], kwargs['ymin'], kwargs['ymax']
+        width, height, max_iter = kwargs['width'], kwargs['height'], kwargs['max_iter']
+        r1 = np.linspace(xmin, xmax, width)
+        r2 = np.linspace(ymin, ymax, height)
+        Z = np.array([[self._julia(complex(r, i), c, max_iter) for r in r1] for i in r2])
+        plt.imshow(Z, extent=[xmin, xmax, ymin, ymax])
+        plt.colorbar()
 
-plt.show()
+    def _draw_koch(self):
+        self._koch_snowflake(self.kwargs)
 
-"""flocon de neige de Koch"""
+    def _koch_snowflake_complex(self, order):
+        if order == 0:
+            return np.array([0.0 + 0.0j, 1.0 + 0.0j, 0.5 + np.sqrt(3)/2*1j, 0.0 + 0.0j])
+        else:
+            z = self._koch_snowflake_complex(order - 1)
+            z1 = np.roll(z, shift=-1)
+            dz = z1 - z
+            new_points = np.vstack([z, z + dz/3, z + dz/3 + dz/3*np.exp(np.pi*1j/3), z + 2*dz/3]).T
+            return new_points.flatten()
 
-# import numpy as np
-# import matplotlib.pyplot as plt
-# from matplotlib.widgets import Slider
+    def _koch_snowflake(self, kwargs):
+        order = kwargs['order']
+        scale = kwargs.get('scale', 10)
+        points = self._koch_snowflake_complex(order) * scale
+        x, y = points.real, points.imag
+        plt.plot(x, y)
+        plt.axis('equal')
 
-# def koch_snowflake(order, scale=10):
-#     def koch_snowflake_complex(order):
-#         if order == 0:
-#             # Initial equilateral triangle
-#             angles = np.array([0, 2*np.pi/3, 4*np.pi/3])
-#             return scale * np.exp(1j * angles)
-#         else:
-#             Z = koch_snowflake_complex(order - 1)
-#             Z_new = np.empty(len(Z) * 4, dtype=complex)
-#             for i in range(len(Z)):
-#                 Z_new[4*i] = Z[i]
-#                 Z_new[4*i+1] = Z[i] + (Z[(i+1) % len(Z)] - Z[i]) / 3
-#                 Z_new[4*i+2] = Z[i] + (Z[(i+1) % len(Z)] - Z[i]) / 3 * (1 + 1j * np.sqrt(3)) / 2
-#                 Z_new[4*i+3] = Z[i] + 2 * (Z[(i+1) % len(Z)] - Z[i]) / 3
-#             return Z_new
+    def _draw_burning_ship(self):
+        self._burning_ship_set(self.kwargs)
 
-#     points = koch_snowflake_complex(order)
-#     return np.real(points), np.imag(points)
+    def _burning_ship(self, c, max_iter):
+        z = c
+        for n in range(max_iter):
+            if abs(z) > 2:
+                return n
+            z = complex(abs(z.real), abs(z.imag))**2 + c
+        return max_iter
 
-# def update(val):
-#     order = int(slider.val)
-#     x, y = koch_snowflake(order)
-#     line.set_data(np.append(x, x[0]), np.append(y, y[0]))
-#     fig.canvas.draw_idle()
-
-# # Initial plot
-# initial_order = 0
-# x, y = koch_snowflake(initial_order)
-
-# fig, ax = plt.subplots()
-# plt.subplots_adjust(bottom=0.2)
-# ax.set_aspect('equal')
-# line, = plt.plot(np.append(x, x[0]), np.append(y, y[0]), 'b-')
-
-# # Slider for controlling the order of the Koch snowflake
-# ax_slider = plt.axes([0.25, 0.1, 0.65, 0.03])
-# slider = Slider(ax_slider, 'Order', 0, 6, valinit=initial_order, valstep=1)
-
-# slider.on_changed(update)
-
-# plt.show()
-
-"""burning ship"""
-
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import matplotlib.animation as animation
-
-# def burning_ship(c, max_iter):
-#     z = np.zeros(c.shape, dtype=np.complex128)
-#     mask = np.ones(c.shape, dtype=bool)
-#     output = np.zeros(c.shape, dtype=int)
-    
-#     for i in range(max_iter):
-#         z[mask] = (np.abs(z[mask].real) + 1j * np.abs(z[mask].imag))**2 + c[mask]
-#         mask = np.abs(z) < 2
-#         output += mask
-#     return output
-
-# def create_fractal(xmin, xmax, ymin, ymax, width, height, max_iter):
-#     r1 = np.linspace(xmin, xmax, width)
-#     r2 = np.linspace(ymin, ymax, height)
-#     c = r1 + r2[:, None] * 1j
-#     return burning_ship(c, max_iter)
-
-# fig, ax = plt.subplots()
-
-# xmin, xmax, ymin, ymax = -2, 1.5, -2, 1.5
-# width, height = 800, 800
-# max_iter = 256
-
-# img = ax.imshow(create_fractal(xmin, xmax, ymin, ymax, width, height, max_iter), extent=[xmin, xmax, ymin, ymax], cmap='hot')
-# ax.set_title("Burning Ship Fractal")
-
-# def animate(i):
-#     global xmin, xmax, ymin, ymax
-#     zoom_factor = 0.9
-#     xcenter = (xmin + xmax) / 2
-#     ycenter = (ymin + ymax) / 2
-#     xwidth = (xmax - xmin) * zoom_factor
-#     yheight = (ymax - ymin) * zoom_factor
-#     xmin = xcenter - xwidth / 2
-#     xmax = xcenter + xwidth / 2
-#     ymin = ycenter - yheight / 2
-#     ymax = ycenter + yheight / 2
-
-#     img.set_data(create_fractal(xmin, xmax, ymin, ymax, width, height, max_iter))
-#     img.set_extent([xmin, xmax, ymin, ymax])
-#     return [img]
-
-# ani = animation.FuncAnimation(fig, animate, frames=100, interval=100, blit=True)
-# plt.show()
+    def _burning_ship_set(self, kwargs):
+        xmin, xmax, ymin, ymax = kwargs['xmin'], kwargs['xmax'], kwargs['ymin'], kwargs['ymax']
+        width, height, max_iter = kwargs['width'], kwargs['height'], kwargs['max_iter']
+        r1 = np.linspace(xmin, xmax, width)
+        r2 = np.linspace(ymin, ymax, height)
+        Z = np.array([[self._burning_ship(complex(r, i), max_iter) for r in r1] for i in r2])
+        plt.imshow(Z, extent=[xmin, xmax, ymin, ymax])
+        plt.colorbar()
