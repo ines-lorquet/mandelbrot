@@ -63,7 +63,7 @@ Les figures à deux dimensions qui sont autosimilaires sont constituées de form
 Les formes autosimilaires peuvent être utilisées pour composer des motifs qui peuvent se répéter indéfiniment
 
 
-[color=#26B260]### Triangle de Sierpiński[/color]
+### Triangle de Sierpiński
 
 Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme autosimilaire d’un triangle :
 
@@ -76,8 +76,9 @@ Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme
 **4.** Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.  
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
 
-Le **triangle de Sierpiński** est un motif fractal formé en répétant ce processus :
-texte coloré en vert
+Le **[color=#26B260]triangle de Sierpiński[/color]** est un motif fractal formé en répétant ce processus :
+
+
 - Commencez avec un grand triangle.
 - Divisez-le en quatre petits triangles en reliant les milieux des côtés.
 - Enlevez le triangle central.
