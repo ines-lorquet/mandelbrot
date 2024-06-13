@@ -54,14 +54,13 @@
 outils : des images aussi bien que des nombres, de la vision géométrique
 aussi bien que de la vision analytique.” - Benoît Mandelbrot
 
-
 ### Formes autosimilaire
+
 Les figures à deux dimensions qui sont autosimilaires sont constituées de formes qui sont des copies plus petites de la forme originale. Par exemple :
 
 ![trianglessimilaires](img/triangles_similaires.png)
 
-Les formes autosimilaires peuvent être utilisées pour composer des motifs qui peuvent se répéter indéfiniment
-
+Les formes autosimilaires peuvent être utilisées pour composer des motifs qui peuvent se répéter indéfiniment.
 
 ### Triangle de Sierpiński
 
@@ -130,16 +129,12 @@ Le **Burning Ship** est une fractale générée en utilisant une méthode itéra
 
 - **Appliquez une formule spécifique** : Pour chaque point $(x, y)$ sur la grille, utilisez la formule itérative suivante :
 $[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ 
-
-où $z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $ et $\cdot$ indique la valeur absolue.
-
-
-- $z_0 = 0$
-- $c = x + yi$ est le point complexe
-- $Re(z_n)$ est la partie réelle de $z_n$
-- $Im(z_n)$ est la partie imaginaire de $z_n$
-- $|Re(z_n)|$ est la valeur absolue de la partie réelle de $z_n$
-- $|Im(z_n)|$ est la valeur absolue de la partie imaginaire de $z_n$
+  - $z_0 = 0$
+  - $c = x + yi$ est le point complexe
+  - $Re(z_n)$ est la partie réelle de $z_n$
+  - $Im(z_n)$ est la partie imaginaire de $z_n$
+  - $|Re(z_n)|$ est la valeur absolue de la partie réelle de $z_n$
+  - $|Im(z_n)|$ est la valeur absolue de la partie imaginaire de $z_n$
 
 - **Répétez l'itération** : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
 
