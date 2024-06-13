@@ -10,11 +10,11 @@ Les formes autosimilaires peuvent être utilisées pour composer des motifs qui 
 ## Le triangle de Sierpinski
 Le triangle de Sierpinski est un exemple de fractale qui repose sur la forme autosimilaire d’un triangle :
 
-1. T = un triangle
-![triangle équilatéral](img/triangle.png)
-2. T1 , T2, T3 = 3 triangles de taille réduite (la moitié de la hauteur et de la largeur de T).
-![3 triangles issus du premier](img/divided_triangle.png)
-3. Positionne T1 , T2 et T3 de sorte que deux coins de chaque triangle touchent les deux autres triangles.
-![triangle de Sierpinski](img/T1,T2,T3.png)
-4. Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.
+1. T = un triangle  
+![triangle équilatéral](img/triangle.png)  
+2. T1 , T2, T3 = 3 triangles de taille réduite (la moitié de la hauteur et de la largeur de T).  
+![3 triangles issus du premier](img/divided_triangle.png)  
+3. Positionne T1 , T2 et T3 de sorte que deux coins de chaque triangle touchent les deux autres triangles.  
+![triangle de Sierpinski](img/T1,T2,T3.png)  
+4. Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.  
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
