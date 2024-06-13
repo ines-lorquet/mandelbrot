@@ -63,7 +63,7 @@ Les figures à deux dimensions qui sont autosimilaires sont constituées de form
 Les formes autosimilaires peuvent être utilisées pour composer des motifs qui peuvent se répéter indéfiniment
 
 
-### Triangle de Sierpiński
+[color=#26B260]### Triangle de Sierpiński[/color]
 
 Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme autosimilaire d’un triangle :
 
@@ -77,7 +77,7 @@ Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
 
 Le **triangle de Sierpiński** est un motif fractal formé en répétant ce processus :
-
+texte coloré en vert
 - Commencez avec un grand triangle.
 - Divisez-le en quatre petits triangles en reliant les milieux des côtés.
 - Enlevez le triangle central.
@@ -124,7 +124,7 @@ En répétant ce processus encore et encore, le bord du flocon de neige devient 
 
 ### Burning ship
 
-Le "Burning Ship" est une fractale générée en utilisant une méthode itérative spécifique. Voici les étapes pour générer cette fractale :
+Le **Burning Ship** est une fractale générée en utilisant une méthode itérative spécifique. Voici les étapes pour générer cette fractale :
 
 - Commencez avec le **plan complexe** : Chaque point sur une grille représente un nombre complexe.
 
