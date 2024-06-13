@@ -17,19 +17,19 @@ points = np.array([
     [2, 4],         # Sommet A
     [0, 0],         # Sommet B
     [4, 0],         # Sommet C
-    # [2, 4]          # Revenir au point de départ pour fermer le triangle
 ])
 
 # point coordonates lists
 x, y = points[:, 0], points[:, 1]
 
-
-# Calcul de la demi-largeur
+# minimum value of column 0 (abscissa)
+# minimum value of column 0 (abscissa)
+# max value - min value / 2 = calculation 1/2 width
 min_x = np.min(points[:, 0])
 max_x = np.max(points[:, 0])
 half_width = (max_x - min_x) / 2
 
-# Calcul de la demi-hauteur
+# same with column 1 (ordinate), calculation 1/2 height
 min_y = np.min(points[:, 1])
 max_y = np.max(points[:, 1])
 half_height = (max_y - min_y) / 2
