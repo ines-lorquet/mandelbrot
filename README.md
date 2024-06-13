@@ -4,14 +4,19 @@
 
 ## Table des matières
 
-- [Un système de résolution automatique de grille de Sokoban ](#un-système-de-résolution-automatique-de-grille-de-sokoban)
+- [Explorez différents types de fractales](#explorez-différents-types-de-fractales)
   - [Table des matières](#table-des-matières)
   - [L'équipe](#léquipe)
-  - [Sokoban](#sokoban)
+  - [Fractales](#fractales)
   - [Contexte](#contexte)
-  - [Automatisation](#automatisation)
-## L'équipe
+  - [Formes autosimilaire](#formes-autosimilaire)
+  - [Triangle de Sierpiński](#triangle-de-sierpiński)
+  - [Mandelbrot](#mandelbrot)
+  - [Julia](#julia)
+  - [Flocon de neige de Koch](#flocon-de-neige-de-koch) 
+  - [Burning ship](#burning-ship) 
 
+## L'équipe
 
 3 étudiants en 1ère année de `Bachelor IT spécialité Intelligence Artificielle` à [La Plateforme_](https://laplateforme.io/) à Marseille
 
@@ -45,7 +50,11 @@
 
 ## Contexte
 
-...
+“Dans un monde toujours plus complexe, les scientifiques ont besoin des deux
+outils : des images aussi bien que des nombres, de la vision géométrique
+aussi bien que de la vision analytique.” - Benoît Mandelbrot
+
+
 ### Formes autosimilaire
 Les figures à deux dimensions qui sont autosimilaires sont constituées de formes qui sont des copies plus petites de la forme originale. Par exemple :
 
@@ -58,13 +67,13 @@ Les formes autosimilaires peuvent être utilisées pour composer des motifs qui 
 
 Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme autosimilaire d’un triangle :
 
-1. T = un triangle  
+**1.** T = un triangle  
 ![triangle équilatéral](img/triangle.png)  
-2. T1 , T2, T3 = 3 triangles de taille réduite (la moitié de la hauteur et de la largeur de T).  
+**2.** T1 , T2, T3 = 3 triangles de taille réduite (la moitié de la hauteur et de la largeur de T).  
 ![3 triangles issus du premier](img/divided_triangle.png)  
-3. Positionne T1 , T2 et T3 de sorte que deux coins de chaque triangle touchent les deux autres triangles.  
+**3.** Positionne T1 , T2 et T3 de sorte que deux coins de chaque triangle touchent les deux autres triangles.  
 ![triangle de Sierpinski](img/T1,T2,T3.png)  
-4. Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.  
+**4.** Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.  
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
 
 Le **triangle de Sierpiński** est un motif fractal formé en répétant ce processus :
