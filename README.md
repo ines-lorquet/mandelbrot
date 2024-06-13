@@ -76,8 +76,7 @@ Le **triangle de Sierpinski** est un exemple de fractale qui repose sur la forme
 **4.** Répète les étapes 2 et 3 avec **chacun** des petits triangles ad libidum.  
 ![triangle de Sierpinski](img/triangles_sierpinski.png)
 
-Le **[color=#26B260]triangle de Sierpiński[/color]** est un motif fractal formé en répétant ce processus :
-
+Le **triangle de Sierpiński** est un motif fractal formé en répétant ce processus :
 
 - Commencez avec un grand triangle.
 - Divisez-le en quatre petits triangles en reliant les milieux des côtés.
@@ -129,8 +128,18 @@ Le **Burning Ship** est une fractale générée en utilisant une méthode itéra
 
 - Commencez avec le **plan complexe** : Chaque point sur une grille représente un nombre complexe.
 
-- **Appliquez une formule spécifique** : Pour chaque point $ (x, y) $ sur la grille, utilisez la formule itérative suivante :
-$[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ où $z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $ et $\cdot $ indique la valeur absolue.
+- **Appliquez une formule spécifique** : Pour chaque point $(x, y)$ sur la grille, utilisez la formule itérative suivante :
+$[ z_{n+1} = (|Re(z_n)| + i|Im(z_n)|)^2 + c \]$ 
+
+où $z_0 = 0 \$ et $c$ est le point complexe $(x, y)$. Ici, $Re(z_n)$ et $Im(z_n)$ sont les parties réelle et imaginaire de $z_n $ et $\cdot$ indique la valeur absolue.
+
+
+- $z_0 = 0$
+- $c = x + yi$ est le point complexe
+- $Re(z_n)$ est la partie réelle de $z_n$
+- $Im(z_n)$ est la partie imaginaire de $z_n$
+- $|Re(z_n)|$ est la valeur absolue de la partie réelle de $z_n$
+- $|Im(z_n)|$ est la valeur absolue de la partie imaginaire de $z_n$
 
 - **Répétez l'itération** : Répétez cette formule pour chaque point jusqu'à ce que le résultat s'échappe à l'infini (ou jusqu'à un nombre maximum d'itérations).
 
