@@ -105,7 +105,7 @@ Les ensembles de **Julia** sont des formes fractales obtenues par des formules m
 - Répétez la formule plusieurs fois.
 - Coloriez le point selon la rapidité avec laquelle il s'éloigne.
 
-Le résultat est un motif complexe et coloré qui se répète à différentes échelles, créant une structure fractale
+Le résultat est un motif complexe et coloré qui se répète à différentes échelles, créant une structure fractale.
 
 ### Flocon de neige de Koch
 
