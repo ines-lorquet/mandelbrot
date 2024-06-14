@@ -7,6 +7,7 @@ class Fractals:
         self.kwargs = kwargs
 
     def draw(self):
+        
         if self.fractal_type == 'sierpinski':
             self._draw_sierpinski()
         elif self.fractal_type == 'mandelbrot':

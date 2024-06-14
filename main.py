@@ -11,27 +11,35 @@ class FractalApp:
         self.root = root
         self.root.title("Fractal Viewer")
 
+        # Custom font for the application
         custom_font = tkfont.Font(family='HalfTerm.ttf', size=12)
 
+        # Frame for the control panel at the top
         control_frame = tk.Frame(root)
         control_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
+        # Label for the fractal selection
         tk.Label(control_frame, text="Choose a Fractal:", font=custom_font).pack(side=tk.LEFT)
         self.fractal_var = tk.IntVar()
-        self.fractal_var.set(1)
+        self.fractal_var.set(1)  # Default selected fractal
 
+        # Radio buttons for selecting different fractals
         fractals = [("Sierpinski", 1), ("Mandelbrot", 2), ("Julia", 3), ("Koch", 4), ("BurningShip", 5)]
         for text, value in fractals:
             tk.Radiobutton(control_frame, text=text, variable=self.fractal_var, value=value, font=custom_font, width=12, height=2).pack(side=tk.LEFT)
         
+        # Button to draw the selected fractal
         tk.Button(control_frame, text="Draw", command=self.draw_fractal, font=custom_font, width=12, height=2).pack(side=tk.LEFT)
 
+        # Frame for the slider at the bottom
         self.slider_frame = tk.Frame(root)
         self.slider_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
+        # Frame for the plot area
         self.plot_frame = tk.Frame(root)
         self.plot_frame.pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
         
+        # Matplotlib figure and canvas setup
         self.fig, self.ax = plt.subplots()
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.plot_frame)
         self.canvas.draw()
@@ -51,10 +59,10 @@ class FractalApp:
             ])
             fractal = Fractals(fractal_type='sierpinski', order=initial_level, points=points)
             self.ax.clear()
-
             fractal.draw()
             self.canvas.draw()
             
+            # Slider for Sierpinski level
             # def update(val):
             #     level = int(self.slider.val)
             #     self.ax.clear()
@@ -62,7 +70,7 @@ class FractalApp:
             #     fractal.draw()
             #     self.canvas.draw()
                 
-            # self.add_slider('Niveau', 0, 7, initial_level, update)
+            # self.add_slider('Level', 0, 7, initial_level, update)
 
         elif figure == 2:
             # Mandelbrot
@@ -86,18 +94,20 @@ class FractalApp:
             initial_level = 2
             fractal = Fractals(fractal_type='koch', order=initial_level)
             fractal.draw()
+            self.canvas.draw()
 
+            # Slider for Koch level
             # def update(val):
             #     level = int(self.slider.val)
             #     self.ax.clear()
             #     fractal.kwargs['order'] = level
-            #     # fractal.draw()
+            #     fractal.draw()
             #     self.canvas.draw()
 
-            # self.add_slider('Niveau', 0, 7, initial_level, update)
+            # self.add_slider('Level', 0, 7, initial_level, update)
 
         elif figure == 5:
-            # BurningShip
+            # Burning Ship
             xmin, xmax, ymin, ymax = -2.0, 1.0, -2.0, 1.0
             width, height, max_iter = 1000, 1000, 256
             fractal = Fractals(fractal_type='burning_ship', xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, width=width, height=height, max_iter=max_iter)
@@ -105,9 +115,11 @@ class FractalApp:
             self.canvas.draw()
 
     def add_slider(self, label, vmin, vmax, valinit, update_func):
+        # Destroy existing widgets in the slider frame
         for widget in self.slider_frame.winfo_children():
             widget.destroy()
         
+        # Create a new slider
         ax_slider = plt.axes([0.1, 0.1, 0.8, 0.06], facecolor='lightgoldenrodyellow')
         self.slider = Slider(ax_slider, label, vmin, vmax, valinit=valinit, valstep=1)
         self.slider.on_changed(update_func)
@@ -118,4 +130,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = FractalApp(root)
     root.mainloop()
-
