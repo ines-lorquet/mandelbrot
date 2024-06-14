@@ -51,7 +51,7 @@ class FractalApp:
 
         if figure == 1:
             # Sierpinski
-            initial_level = 3
+            initial_level = 5
             points = np.array([
                 [0, 0],
                 [1, 0],
@@ -75,7 +75,7 @@ class FractalApp:
         elif figure == 2:
             # Mandelbrot
             xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
-            width, height, max_iter = 1000, 1000, 256
+            width, height, max_iter = 1000, 1000, 5
             fractal = Fractals(fractal_type='mandelbrot', xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, width=width, height=height, max_iter=max_iter)
             fractal.draw()
             self.canvas.draw()
