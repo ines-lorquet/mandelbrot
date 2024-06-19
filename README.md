@@ -44,9 +44,11 @@
     <img src="img/github.png" width=25>
   </a>
 
-## Fractales
+## Mode d'emploi
 
-...
+1. Branche main
+2. Lancer le fichier main.py
+3. Dans la fenêtre qui s'ouvre, selectionner une figure de fractale et cliquer sur "Draw"
 
 ## Contexte
 
